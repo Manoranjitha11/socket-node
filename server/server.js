@@ -7,4 +7,4 @@ console.log(publicpath);
 
 var port = process.env.PORT || 3000;
 app.use(express.static(publicpath));
-app.listen(3000);
+app.listen(port);

@@ -15,6 +15,9 @@ io.on('connection', (socket) => {
   })
   socket.on('createMail', (data) => {
 console.log('From clientVersion', data);
+io.emit('sendToAll', {
+  msg : data.name
+})
   })
   socket.on('disconnect' , () => {
     console.log("Disconnected from client");

@@ -10,18 +10,21 @@
       console.log(socket);
       socket.on('connect',() => {
         console.log("Connected to server");
-        socket.emit('createMail', {
-          name : 'from client',
-          address : 'client'
-        })
+        // socket.emit('createMail', {
+        //   name : 'from client',
+        //   address : 'client'
+        // })
       })
       socket.on('disconnect',() => {
         console.log("Disconnected from server");
       })
       socket.on('newMail' , (emailData) => {
-        console.log('New email' , emailData);
-      })
+      //  console.log('New email' , emailData);
 
+      })
+socket.on('sendToAll', (data) => {
+  console.log(data);
+})
   </script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <p>Chat app</p>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+      // var socket =   io('http://10.1.0.206:8080');
+      var socket = io();
+      console.log(socket);
+      socket.on('connect',() => {
+        console.log("Connected to server");
+        // socket.emit('createMail', {
+        //   name : 'from client',
+        //   address : 'client'
+        // })
+      })
+      socket.on('disconnect',() => {
+        console.log("Disconnected from server");
+      })
+      socket.on('newMail' , (emailData) => {
+      //  console.log('New email' , emailData);
+
+      })
+socket.on('sendToAll', (data) => {
+  console.log(data);
+})
+  </script>
+</body>
+</html>
